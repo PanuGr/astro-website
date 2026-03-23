@@ -6,14 +6,14 @@ import astroLLMsGenerator from 'astro-llms-generate';
 const isProduction = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
-  site: 'https://digisolutech.netlify.app',
+  site: 'your-domain-name',
   prefetch: true,
   integrations: [sitemap({
     lastmod: new Date(),
     customPages: [
-      'https://digisolutech.netlify.app/llms.txt',
-      'https://digisolutech.netlify.app/llms-small.txt',
-      'https://digisolutech.netlify.app/llms-full.txt'
+      'your-domain-name/llms.txt',
+      'your-domain-name/llms-small.txt',
+      'your-domain-name/llms-full.txt'
     ],
   }),
   astroLLMsGenerator(),
@@ -28,6 +28,7 @@ export default defineConfig({
       postcss: {
         plugins: isProduction ? [
           purgeCSSPlugin({
+            //add other type files in use
             content: ['./src/**/*.astro']
           })
         ] : []
