@@ -11,7 +11,3 @@
     frame-ancestors 'none';
     object-src 'none'; 
     '''
-[[redirects]]
-  from = "/fi/"
-  to = "/"
-  status = 301
