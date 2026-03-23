@@ -1,0 +1,150 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {// add your icons here} from "@lucide/astro";
+---
+
+<style>
+</style>
+<Layout
+    heading=""
+    lead=""
+    cta=""
+    heroBg="linear-gradient(rgba(5, 5, 6, 0.6), rgba(5, 5, 6, 0.6)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&fm=avif&q=10&w=1440')"
+>
+    <meta
+        name="google-site-verification"
+        content=""
+        slot="head"
+    />
+
+    <main id="main-content">
+       
+        <!-- Contact -->
+        <section id="contact" class="py-5 section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center mb-5">
+                        <h2 class="mb-3 text-uppercase" id="form-heading">
+                             Ota yhteyttä ja aloitetaan!
+                        </h2>
+                        <p class="lead text-muted">
+                            Ota yhteyttä ja aloitetaan!
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div
+                            class="card border-white border-opacity-10 shadow-md"
+                        >
+                            <div class="card-body p-4 p-lg-5">
+                                <form
+                                    id="contactForm"
+                                    aria-labelledby="form-heading"
+                                    method="POST"
+                                    netlify
+                                    name="contact-form"
+                                    autocomplete="on"
+                                    class="row g-3"
+                                >
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label"
+                                            >Nimi *</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            class="form-control"
+                                            placeholder="Adam Square"
+                                            autocomplete="name"
+                                            title="Numbers and symbols are not allowed"
+                                            aria-label="Name"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label"
+                                            >Sähköposti *</label
+                                        >
+                                        <input
+                                            id="email"
+                                            name="email"
+                                            type="email"
+                                            class="form-control"
+                                            placeholder="email@address.com"
+                                            autocomplete="email"
+                                            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                            required
+                                            title="Please enter a valid email address"
+                                            aria-label="email address"
+                                        />
+                                    </div>
+                                    <div class="col-12">
+                                        <label
+                                            for="companyName"
+                                            class="form-label">Yrittys</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="companyName"
+                                            name="companyName"
+                                            class="form-control"
+                                            placeholder="Yritys"
+                                            autocomplete="organization"
+                                            aria-label="Company's name"
+                                        />
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label"
+                                            >Projektin tiedot *</label
+                                        >
+                                        <textarea
+                                            class="form-control"
+                                            id="message"
+                                            name="message"
+                                            rows="4"
+                                            placeholder="Kerro meille projektistasi. Millaisen verkkosivuston tarvitset? Mikä on yrityksesi toimiala?"
+                                            aria-label="Type your message"
+                                            required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                id="policyPrivacy"
+                                                required
+                                                name="policyPrivacy"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="policyPrivacy"
+                                                >Hyväksyn, että henkilötietojani
+                                                käsitellään <a
+                                                    href="/privacy"
+                                                    aria-label="Lue tietosuojakäytännön uudella sivulla"
+                                                    target="_blank"
+                                                    >tietosuojakäytännön</a
+                                                >
+                                                mukaisesti</label
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary btn-lg w-100"
+                                            >Ota yhteyttä</button
+                                        >
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>

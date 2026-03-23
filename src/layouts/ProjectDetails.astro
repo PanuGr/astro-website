@@ -1,0 +1,39 @@
+---
+import Layout from "./Layout.astro";
+
+export interface Props {
+  frontmatter: {
+    title: string;
+    badge?: string;
+    image: string[];
+    alt?: string[];
+    links?: string[];
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<style is:inline>
+ 
+  main {
+    max-width: 75ch;
+    padding-inline: 1rem;
+    margin: auto;
+    padding-bottom: 4rem;
+
+    h2 {
+      margin-top: 4rem;
+    }
+  }
+</style>
+<Layout
+  title={frontmatter.title}
+  heading={frontmatter.title}
+  lead={frontmatter.badge}
+  heroBg={`linear-gradient(rgba(5, 5, 6, 0.7), rgba(5, 5, 6, 0.7)), url('${frontmatter.image[0]}')`}
+>
+  <main class="" id="main-content">
+    <slot />
+  </main>
+</Layout>

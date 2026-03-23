@@ -1,0 +1,50 @@
+// =============================================================================
+// Base Styles — Type Selectors & Attribute Selectors
+// =============================================================================
+
+@view-transition {
+    navigation: auto;
+}
+
+:root {
+    interpolate-size: allow-keywords;
+}
+
+*:focus-visible {
+    outline: 1px solid white !important;
+}
+
+html {
+    scroll-padding-top: 4rem;
+}
+
+body {
+    text-rendering: optimizeSpeed;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    max-width: 768px;
+    margin: auto;
+}
+
+//add automatically external link icon to all external links
+a[href^="http"]:not([href*="domain-name"]):not(:has(img))::after {
+    display: inline-block;
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-color: currentColor;
+    background-image: url("/images/arrow-up-right.svg"); // Replace with the actual path to your external link icon. This is a lucide icon
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 0.25rem;
+}

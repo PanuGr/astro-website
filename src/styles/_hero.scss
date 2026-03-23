@@ -1,0 +1,12 @@
+.hero {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    h1 {
+        max-width: 30ch;
+        text-wrap: balance;
+        margin: auto;
+    }
+}

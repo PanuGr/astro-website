@@ -1,0 +1,57 @@
+---
+import "../styles/index.scss";
+import { SEOMetadata } from "astro-seo-metadata";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const { title, description, image } = Astro.props;
+import {
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  SOCIAL_IMAGE,
+  FAVICON,
+} from "../data/site";
+---
+
+<link
+  rel="preload"
+  as="image"
+  href=""
+  type="image/avif"
+  media="(max-width: 1440px)"
+/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- <meta name="color-scheme" content="dark" /> -->
+<link rel="sitemap" href="/sitemap-0.xml" />
+<meta name="keywords" content={SITE_KEYWORDS} />
+<SEOMetadata
+  siteName={SITE_TITLE}
+  title={title || SITE_TITLE}
+  description={description || SITE_DESCRIPTION}
+  image={image || SOCIAL_IMAGE}
+  favicon={FAVICON}
+  author="Panagiotis Panagiotakopoulos"
+  astroSitemap={true}
+  canonicalUrl={Astro.url.toString()}
+  type={"website"}
+  astroGenerator={true}
+/>
+<!-- Scripts -->
+<script>
+  const isDev = import.meta.env.DEV;
+
+  if (isDev) {
+    //console.log("Import entire Bootstrap in dev");
+    import("bootstrap");
+  } else {
+    //console.log("Import only what you need in production");
+    import("bootstrap/js/dist/button");
+    import("bootstrap/js/dist/collapse");
+  }
+</script>
